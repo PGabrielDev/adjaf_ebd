@@ -22,6 +22,7 @@ public class HelpersDTO {
 
     public static Aluno alunoRequestToAlunoEntity(AlunoRequest request){
         return new Aluno(
+                request.getId(),
                 request.getNome(),
                 request.getIdade(), 
                 classeRequestToClasseEntity(request.getClasse())
@@ -30,6 +31,7 @@ public class HelpersDTO {
 
     public static Aula aulaRequestToAulaEntity(AulaRequest request){
         return new Aula(
+                request.getId(),
                 request.getNome(), 
                 request.getAssunto(),
                 request.getData(),
@@ -39,6 +41,7 @@ public class HelpersDTO {
 
     public static AlunoPresenca alunoPresencaRequestToAulonoPresencaEnity(AlunoPresencaRequest request){
         return new AlunoPresenca(
+                request.getId(),
                 alunoRequestToAlunoEntity(request.getAluno()),
                 aulaRequestToAulaEntity(request.getAula()),
                 request.getPresenca()
