@@ -12,6 +12,15 @@ public class AlunoPresenca  {
     @Id
     private String id;
     private Aluno aluno;
+    private Aula aula;
     private Boolean presenca;
+
+
+    public AlunoPresenca(Aluno aluno,Aula aula, Boolean presenca) {
+        this.aluno = aluno;
+        this.presenca = presenca;
+        this.aula = aula;
+    }
+
 
 }

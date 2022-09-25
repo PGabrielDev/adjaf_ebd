@@ -18,4 +18,13 @@ public class Aula {
     private Date data;
     private Classe classe;
 
+    public Aula(String nome, String assunto, Date data, Classe classe) {
+        this.nome = nome;
+        this.assunto = assunto;
+        this.data = data;
+        this.classe = classe;
+    }
+
+
+
 }

@@ -13,4 +13,12 @@ public class Classe {
     private String id;
     private String nome;
 
+
+    public Classe(String nome) {
+        this.nome = nome;
+    }
+
+    
+
+
 }

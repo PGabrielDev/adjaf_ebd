@@ -15,4 +15,12 @@ public class Aluno {
     private Integer idade;
     private Classe classe;
 
+
+    public Aluno(String nome, Integer idade, Classe classe) {
+        this.nome = nome;
+        this.idade = idade;
+        this.classe = classe;
+    }
+
+
 }
