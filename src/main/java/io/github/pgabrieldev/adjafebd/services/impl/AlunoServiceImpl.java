@@ -3,11 +3,8 @@ package io.github.pgabrieldev.adjafebd.services.impl;
 import org.springframework.stereotype.Service;
 
 import io.github.pgabrieldev.adjafebd.entities.Aluno;
-import io.github.pgabrieldev.adjafebd.entities.Classe;
 import io.github.pgabrieldev.adjafebd.repository.AlunoRepository;
-import io.github.pgabrieldev.adjafebd.repository.ClasseRepository;
 import io.github.pgabrieldev.adjafebd.services.AlunoService;
-import io.github.pgabrieldev.adjafebd.services.ClasseService;
 import lombok.RequiredArgsConstructor;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
