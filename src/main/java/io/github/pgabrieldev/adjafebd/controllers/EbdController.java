@@ -2,6 +2,7 @@ package io.github.pgabrieldev.adjafebd.controllers;
 
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import io.github.pgabrieldev.adjafebd.dtos.AlunoRequest;
 import io.github.pgabrieldev.adjafebd.dtos.ClasseRequest;
@@ -15,6 +16,8 @@ import reactor.core.publisher.Mono;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+
+@RestController
 
 @RequestMapping("adjafebd/v1/ebd")
 @RequiredArgsConstructor

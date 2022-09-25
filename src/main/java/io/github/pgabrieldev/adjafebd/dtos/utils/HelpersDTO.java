@@ -17,7 +17,7 @@ public class HelpersDTO {
     
 
     public static Classe classeRequestToClasseEntity(ClasseRequest request){
-        return new Classe(request.getNome());
+        return new Classe(request.getId(),request.getNome());
     }
 
     public static Aluno alunoRequestToAlunoEntity(AlunoRequest request){
