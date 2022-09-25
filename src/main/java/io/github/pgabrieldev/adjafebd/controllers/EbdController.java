@@ -5,9 +5,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.github.pgabrieldev.adjafebd.dtos.AlunoRequest;
+import io.github.pgabrieldev.adjafebd.dtos.AulaRequest;
 import io.github.pgabrieldev.adjafebd.dtos.ClasseRequest;
 import io.github.pgabrieldev.adjafebd.dtos.utils.HelpersDTO;
 import io.github.pgabrieldev.adjafebd.entities.Aluno;
+import io.github.pgabrieldev.adjafebd.entities.Aula;
 import io.github.pgabrieldev.adjafebd.entities.Classe;
 import io.github.pgabrieldev.adjafebd.services.facade.EbdFacade;
 import lombok.RequiredArgsConstructor;
@@ -34,6 +36,13 @@ public class EbdController {
     public Mono<Aluno> saveAluno(@RequestBody AlunoRequest request) {
         return service.saveAluno(HelpersDTO.alunoRequestToAlunoEntity(request));
     }
+
+    @PostMapping("/aula")
+    public Mono<Aula> saveAula(@RequestBody AulaRequest request) {
+        return service.saveAula(HelpersDTO.aulaRequestToAulaEntity(request));
+    }
+
+    
     
 
 }
