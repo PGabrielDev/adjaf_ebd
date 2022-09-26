@@ -1,6 +1,11 @@
 package io.github.pgabrieldev.adjafebd.services.facade;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import io.github.pgabrieldev.adjafebd.entities.Aluno;
 import io.github.pgabrieldev.adjafebd.entities.AlunoPresenca;
@@ -91,8 +96,18 @@ public class EbdFacedeImpl implements EbdFacade {
         return alunoPresencaService.delete(alunoPresenca);
     }
     @Override
+    @Transactional
     public Mono<Chamada> saveChamada(Chamada chamada) {
+        
+        var alunoPresenca = chamada.getAlunoPresenca();
+        List<AlunoPresenca> listaAlunoPresenca = new ArrayList<>();
+        Flux.fromStream(alunoPresenca.stream().map(alunoPresencaService::save))
+            .flatMap(ap -> ap)
+            .map(listaAlunoPresenca::add).subscribe();
+        chamada.setAlunoPresenca(listaAlunoPresenca);
+        chamada.setDataChamada(new Date());
         return chamadaService.save(chamada);
+
     }
     @Override
     public Mono<Chamada> findChamadaById(String id) {

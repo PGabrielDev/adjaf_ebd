@@ -13,7 +13,7 @@ import reactor.core.publisher.Mono;
 @RequiredArgsConstructor
 public class AulaServiceImpl implements AulaService {
     
-    private AulaRepository aulaRepository;
+    private final AulaRepository aulaRepository;
 
     @Override
     public Mono<Aula> save(Aula aula) {

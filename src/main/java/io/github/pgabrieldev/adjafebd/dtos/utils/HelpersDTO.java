@@ -43,7 +43,6 @@ public class HelpersDTO {
         return new AlunoPresenca(
                 request.getId(),
                 alunoRequestToAlunoEntity(request.getAluno()),
-                aulaRequestToAulaEntity(request.getAula()),
                 request.getPresenca()
             );
     }
@@ -51,7 +50,7 @@ public class HelpersDTO {
     public static Chamada chamadaRequestToChamadaEntity(ChamadaRequest request){
         var list = request.getAlunoPresenca()
             .stream()
-            .map(ap -> new AlunoPresenca(alunoRequestToAlunoEntity(ap.getAluno()), aulaRequestToAulaEntity(ap.getAula()), ap.getPresenca())).collect(Collectors.toList());
-        return new Chamada(list, request.getDataChamada());
+            .map(ap -> new AlunoPresenca(alunoRequestToAlunoEntity(ap.getAluno()),  ap.getPresenca())).collect(Collectors.toList());
+        return new Chamada(list, request.getDataChamada(), aulaRequestToAulaEntity(request.getAula()));
     }
 }

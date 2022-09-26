@@ -16,13 +16,15 @@ public class Chamada {
     private String id;
     private List<AlunoPresenca> AlunoPresenca;
     private Date dataChamada;
+    private Aula aula;
 
 
 
 
-    public Chamada(List<AlunoPresenca> AlunoPresenca, Date dataChamada) {
+    public Chamada(List<AlunoPresenca> AlunoPresenca, Date dataChamada,Aula aula) {
         this.AlunoPresenca = AlunoPresenca;
         this.dataChamada = dataChamada;
+        this.aula = aula;
     }
 
 

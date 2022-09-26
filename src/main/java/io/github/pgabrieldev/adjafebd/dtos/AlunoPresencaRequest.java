@@ -6,6 +6,5 @@ import lombok.Data;
 public class AlunoPresencaRequest {
     private String id;
     private AlunoRequest aluno;
-    private AulaRequest aula;
     private Boolean presenca;
 }
